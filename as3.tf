@@ -11,7 +11,7 @@ provider "bigip" {
 resource "bigip_as3" "as3-demo1" {
   provider = bigip.bigip1
   as3_json = templatefile(
-    "${path.module}/as3.tmpl",
+    "${path.module}/as3_virtsvr.tmpl",
     {
       pool_members = jsonencode(["10.1.0.1","10.1.0.2"])
     }
